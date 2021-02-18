@@ -18,6 +18,7 @@
     /* Font Variables */
     --font-primary:'Poppins', sans-serif;
     --font-display: 'Open Sans',sans-serif;
+    --default-font-size:1.8rem;
 
     /* Responsive breakpoints */
     --bp-largest: 75em; /*1200*/
@@ -39,5 +40,109 @@ body{
 
 .container{
     display: grid;
-    grid-template-rows: 80vh min-content min-content;
+    grid-template-rows: 90vh min-content min-content;
+    font-size: 1.8rem;
 }
+
+.header{
+    background-image: linear-gradient(rgb(235, 251, 255,0.5),rgb(235, 251, 255,0.5)), url(../images/bg-hero-desktop.svg);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: 15vh max-content;
+    grid-template-areas: "logo-btn"
+                        "header-content";
+}
+
+.header__logo__btn-container{
+    grid-area: "logo-btn";
+    padding:0 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo{
+    height: 3.5rem;
+}
+
+.btn, .btn:link, .btn:visited{
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 1.3rem 5.2rem;
+    font-size: var(--default-font-size);
+    display: inline-block;
+    border-radius: 10rem;
+    border:none;
+    cursor:pointer;
+
+}
+
+.btn:hover{
+    transform:translateY(-.3rem);
+    box-shadow: 0 10px 20px rgba(#000,0.8);
+}
+
+.btn:active{
+    outline:none;
+    transform: translateY(-.1rem);
+    box-shadow: 0 5px 10px rgba(#000,0.2);
+}
+
+.btn--white{
+    background-color: #fff;
+    color: (var(--color-secondary-dark));
+    font-weight: 700;
+}
+
+.header__section--main{
+    grid-area:"header-content";
+    padding:0 8rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "header-content header-image"
+}
+
+.header__content{
+    display: grid;
+    padding: 6rem 8rem 0 0 ;
+    padding-top: 10rem;
+    grid-template-rows: repeat(3,min-content);
+    grid-row-gap: 1.5rem;
+    grid-template-areas: "heading-main"
+                        "header-text"
+                        "pink-cta";
+}
+
+.heading-1{
+    grid-area: "heading-main";
+    padding-right: 8rem;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--color-secondary-dark);
+}
+
+.header__text{
+    grid-area: "header-text";
+    color: var(--color-tertiary);
+}
+
+.btn-pink{
+    grid-area: "pink-cta";
+    background-color:var(--color-primary);
+    color: #fff;
+    align-self: start;
+    justify-self: start ; 
+}
+.header__image--container{
+    grid-area: "header-image";
+    display: flex;
+    align-self: flex-end;
+}
+
+.header__image{
+    height: 45rem;
+}
+
+
+
